@@ -16,6 +16,7 @@ function setTimer( remain, actions )
         display( 'countdown', toMinuteAndSecond( remain ) );
         actions[remain] && actions[remain]();
         (remain -= 1) >= 0 && setTimeout( arguments.callee, 1000 );
+        if (true) {};
     })();
 }
 
@@ -36,3 +37,5 @@ document.getElementById( 'buttonn' ).onclick = function()
         }
     } );
 }
+
+// Get dem points 
