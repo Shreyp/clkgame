@@ -3,5 +3,7 @@
 }
 
 .col-md-3 {
-  padding: 20px;
+  text-align: center;
+  padding: 10px;
+  border: 2px red solid;
 }
