@@ -1,19 +1,21 @@
 // Click Game Start
-var secondsCount = 0;
-var timerInterval;
+var countdown;
+var countdown_number;
 
-setTimeout(function() {
-    if(secondsCount === 0) {
-        clearInterval(timerInterval);
-        buttonn.parentNode.removeChild(buttonn);
-        alert("Your score is " + count);
-    }
-}, 10000);
-
-var count = 1
-
-function countPoints() {
- count += 1;
- console.log(countPoints)
+function countdown_init() {
+    countdown_number = 11;
+    countdown_trigger();
 }
 
+function countdown_trigger() {
+    if(countdown_number > 0) {
+        countdown_number--;
+        document.getElementById('countdown_text').innerHTML = countdown_number;
+        if(countdown_number > 0) {
+            countdown = setTimeout('countdown_trigger()', 1000);
+        }
+}
+
+function countdown_clear() {
+    clearTimeout(countdown);
+}
