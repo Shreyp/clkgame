@@ -25,6 +25,7 @@ function timerCountdown(){
 //Count Points
   function countClicks(){
     points +=1;
-    this.removeEventListener('click', countClicks);
+    this.removeEventListener("click", countClicks);
+    this.setAttribute("hidden", countClicks);
     console.log(points);
 }
