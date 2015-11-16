@@ -7,7 +7,9 @@ var clickImages = document.getElementsByTagName("img");
 //Function to Start Timer
   function startGame() {
     timerDecrease = setInterval(timerCountdown, 1000);
-    };
+    for(var i = 0; i < clickImages.length; i++) {
+    clickImages[i].addEventListener("click", countClicks)};
+};
 
 toggleBtn.addEventListener("click", startGame);
 
@@ -24,8 +26,7 @@ function timerCountdown(){
 //Function to count dem points
   function countClicks(){
     points +=1;
+    console.log(points);
 }
 
 //Loop to add clicks to images
-for(var i = 0; i < clickImages.length; i++) {
-  clickImages[i].addEventListener("click", countClicks)}
