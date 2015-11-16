@@ -1,7 +1,22 @@
 // Click Game Start
-var points = 0
+var points = 0;
+var imageElements = document.getElementsByTagName("img");
+var secondsCount = 0;
+var toggleBtn = document.getElementById("toggleBtn");
 
-function countPoints () {
-  points +=1;
-  console.log(points)
+function startGame() {
+  setTimeout(function() {
+    if(secondsCount === 0) {
+    alert("Your score is " + points);
+  }
+}, 20000);
+    for(var i = 0; i < imageElements.length; i++) {
+    imageElements[i].addEventListener("click", function() {
+    points +=1
+    console.log(points)})
 }
+}
+
+
+
+toggleBtn.addEventListener("click", startGame);
