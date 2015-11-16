@@ -4,16 +4,16 @@ var toggleBtn = document.getElementById("toggleBtn");
 var secondsRemaining = 20;
 var clickImages = document.getElementsByTagName("img");
 
-//Function to Start Timer
-  function startGame() {
-    timerDecrease = setInterval(timerCountdown, 1000);
-    for(var i = 0; i < clickImages.length; i++) {
-    clickImages[i].addEventListener("click", countClicks)};
+//Start Game
+function startGame() {
+  timerDecrease = setInterval(timerCountdown, 1000);
+  for(var i = 0; i < clickImages.length; i++) {
+  clickImages[i].addEventListener("click", countClicks)};
 };
 
 toggleBtn.addEventListener("click", startGame);
 
-//Function to Countdown
+//Timer Ticks
 function timerCountdown(){
   if(secondsRemaining > 0){
     document.getElementById("status").innerHTML = secondsRemaining-=1;
@@ -22,11 +22,9 @@ function timerCountdown(){
     clearInterval(timerDecrease);
   }
 }
-
-//Function to count dem points
+//Count Points
   function countClicks(){
     points +=1;
+    this.removeEventListener('click', countClicks);
     console.log(points);
 }
-
-//Loop to add clicks to images
