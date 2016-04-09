@@ -3,7 +3,7 @@ var clickImages = document.getElementsByTagName("img");
 var youScore = document.getElementById("#yourScore");
 var reset = document.getElementById("resetBtn");
 var statusBtn = document.getElementById("status");
-var secondsRemaining = 20;
+var secondsRemaining = 5;
 var timerDecrease;
 var points = 0;
 
@@ -15,6 +15,7 @@ function startGame() {
   };
   toggleBtn.setAttribute("class","btn btn-secondary");
   resetBtn.setAttribute("disabled", "");
+  toggleBtn.setAttribute("disabled", "");
 };
 
 function resetGame(){
@@ -37,8 +38,6 @@ function timerCountdown(){
     });
     resetBtn.removeAttribute("disabled", "");
     clearInterval(timerDecrease);
-    secondsRemaining = 20;
-    points=0;
   }
 }
 
