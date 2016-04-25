@@ -3,7 +3,7 @@ var clickImages = document.getElementsByTagName("img");
 var youScore = document.getElementById("#yourScore");
 var reset = document.getElementById("resetBtn");
 var statusBtn = document.getElementById("status");
-var secondsRemaining = 5;
+var secondsRemaining = 20;
 var timerDecrease;
 var points = 0;
 
